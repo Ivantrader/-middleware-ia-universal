@@ -1,18 +1,18 @@
-<!DOCTYPE html>
-<html lang="pt-BR">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Oráculo AI</title>
-  <style>
-    body { font-family: sans-serif; background: #0f0f0f; color: #fff; display: flex; align-items: center; justify-content: center; height: 100vh; flex-direction: column; text-align: center; }
-    h1 { color: #00ff99; font-size: 2.5em; }
-    p { font-size: 1.2em; color: #ccc; }
-  </style>
-</head>
-<body>
-  <h1>🚀 Oráculo AI Universal</h1>
-  <p>Sistema de IA externo configurado com sucesso!</p>
-  <p>Acesse as rotas da API via <code>/api/index</code> ou consulte a documentação no GitHub.</p>
-</body>
-</html>
+// index.js
+const express = require("express");
+const cors = require("cors");
+const app = express();
+const port = process.env.PORT || 3000;
+
+app.use(cors());
+app.use(express.json());
+
+// Rota raiz (corrige o erro 404 ao acessar oraculoai.clickparceiros.com)
+app.get("/", (req, res) => {
+  res.status(200).send(`
+    <h1>Status: Online</h1>
+    <p>Middleware IA Universal conectado com sucesso.</p>
+  `);
+});
+
+// Rota de status (opcional, usada para test
