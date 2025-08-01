@@ -1,8 +1,7 @@
-const express = require("express");
-const router = express.Router();
-
-router.use("/openrouter", require("./openrouter"));
-router.use("/gemini", require("./gemini"));
-router.use("/huggingface", require("./huggingface"));
-
-module.exports = router;
+// api/index.js
+export default function handler(req, res) {
+  res.status(200).json({ 
+    status: "Online", 
+    message: "Middleware IA Universal funcionando com sucesso!" 
+  });
+}
